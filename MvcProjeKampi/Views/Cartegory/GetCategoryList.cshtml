@@ -1,6 +1,6 @@
-﻿@model IEnumerable<Entity_Layer.Concrete.Category>
-@* hoca yazdi  @using Entity_Layer.Concrete
-@model List<Category>*@
+﻿@* View add bir sekilde eklersek bu cikiyor  @model IEnumerable<Entity_Layer.Concrete.Category>*@
+@using Entity_Layer.Concrete
+@model List<Category>
 
 @{
     Layout = null;
@@ -23,16 +23,20 @@
     <table class="table table-bordered">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CategoryID)
+                @*@Html.DisplayNameFor(model => model.CategoryID)*@
+                CategoryID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CategoryName)
+                @* @Html.DisplayNameFor(model => model.CategoryName)*@
+                CategoryName
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CategoryDescription)
+                @* @Html.DisplayNameFor(model => model.CategoryDescription)*@
+                CategoryDiscreption
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CategoryStatus)
+                @* @Html.DisplayNameFor(model => model.CategoryStatus)*@
+                CategoryStatues
             </th>
             <th></th>
         </tr>
@@ -60,5 +64,7 @@
     }
     
     </table>
+
+    <a href="/Cartegory/AddCategory" class="btn btn-info">Add Category</a>
 </body>
 </html>

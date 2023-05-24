@@ -22,12 +22,14 @@ namespace EntityAccessLayer.Concrete.Concrete
 
         public void Delete(T p)
         {
-            throw new NotImplementedException();
+            _object.Remove(p);
+            c.SaveChanges();
         }
 
         public void Insert(T p)
         {
-            throw new NotImplementedException();
+            _object.Add(p);
+            c.SaveChanges();
         }
 
         public List<T> List()
@@ -37,12 +39,12 @@ namespace EntityAccessLayer.Concrete.Concrete
 
         public List<T> List(Expression<Func<T, bool>> filtre)
         {
-            throw new NotImplementedException();
+            return _object.Where(filtre).ToList();
         }
 
         public void Update(T p)
         {
-            throw new NotImplementedException();
+            c.SaveChanges();
         }
     }
 }
