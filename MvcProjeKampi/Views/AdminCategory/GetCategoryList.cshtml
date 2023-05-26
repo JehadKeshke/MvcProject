@@ -1,0 +1,74 @@
+﻿@* View add bir sekilde eklersek bu cikiyor  @model IEnumerable<Entity_Layer.Concrete.Category>*@
+@using Entity_Layer.Concrete
+@model List<Category>
+@{
+    ViewBag.Title = "GetCategoryList";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width" />
+    <title>GetCategoryList</title>
+</head>
+<body>
+    @* <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.CategoryID)*@
+                CategoryID
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.CategoryName)*@
+                CategoryName
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.CategoryDescription)*@
+                CategoryDiscreption
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.CategoryStatus)*@
+                CategoryStatues
+            </th>
+            <th>Operation</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.CategoryID
+                </td>
+                <td>
+                    @item.CategoryName
+                </td>
+                <td>
+                    @item.CategoryDescription
+                </td>
+                <td>
+                    @item.CategoryStatus
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CategoryID }) |
+                    @Html.ActionLink("Details","Details" , new { id = item.CategoryID }) |
+                    @Html.ActionLink("Delete","RemoveCategory" , new { id = item.CategoryID }) |
+                    
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <a href="/AdminCategory/AddCategory" class="btn btn-info">Add Category</a>
+</body>
+</html>
+
+
