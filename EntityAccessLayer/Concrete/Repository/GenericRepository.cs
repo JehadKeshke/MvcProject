@@ -21,7 +21,9 @@ namespace EntityAccessLayer.Concrete.Concrete
 
         public void Delete(T p)
         {
-            _object.Remove(p);
+            var DeletedEntity = c.Entry(p);
+            DeletedEntity.State = EntityState.Deleted;
+            //_object.Remove(p);
             c.SaveChanges();
         }
 
@@ -33,7 +35,9 @@ namespace EntityAccessLayer.Concrete.Concrete
 
         public void Insert(T p)
         {
-            _object.Add(p);
+            var AddedEntity = c.Entry(p);
+            AddedEntity.State = EntityState.Added;
+            //_object.Add(p);
             c.SaveChanges();
         }
 
@@ -49,6 +53,8 @@ namespace EntityAccessLayer.Concrete.Concrete
 
         public void Update(T p)
         {
+            var UpdatedEntity = c.Entry(p);
+            UpdatedEntity.State = EntityState.Modified;
             c.SaveChanges();
         }
     }

@@ -38,5 +38,10 @@ namespace BusinessLayer.Concrete
         {
             return _categoryDal.Get(x => x.CategoryID == id);
         }
+
+        public void UpdateCategory(Category category)
+        {
+            _categoryDal.Update(category);
+        }
     }
 }
