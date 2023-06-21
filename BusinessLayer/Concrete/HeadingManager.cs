@@ -18,7 +18,7 @@ namespace BusinessLayer.Concrete
             _headingdal = iheadingdal;
         }
          
-        public void AddCategory(Heading heading)
+        public void AddHeading(Heading heading)
         {
             _headingdal.Insert(heading);
         }
@@ -33,13 +33,13 @@ namespace BusinessLayer.Concrete
             return _headingdal.List();
         }
 
-        public void RemoveCategory(Heading heading)
+        public void RemoveHeading(Heading heading)
         {
             _headingdal.Delete(heading);
 
         }
 
-        public void UpdateCategory(Heading heading)
+        public void UpdateHeading(Heading heading)
         {
             _headingdal.Update(heading);
         }

@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Concrete;
+using Entity_Layer.Concrete;
 using EntityAccessLayer.EntityFramework;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +12,47 @@ namespace MvcProjeKampi.Controllers
 {
     public class HeadingController : Controller
     {
-        HeadingManager hm = new HeadingManager(new EfHeadingDal());  
+        HeadingManager hm = new HeadingManager(new EfHeadingDal());
+        CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        WriterManager wm = new WriterManager(new EfWriterDal());
 
         // GET: Heading
         public ActionResult Index()
         {
             var headingvlue = hm.GetList();
             return View(headingvlue);
+        }
+
+        [HttpGet]
+        public ActionResult AddHeading()
+        {
+            List<SelectListItem> valuectegory = (from x in cm.GetList()
+                                                 select new SelectListItem
+                                                 {
+                                                     Text = x.CategoryName,
+                                                     Value = x.CategoryID.ToString()
+                                                 }
+                                                 ).ToList();
+            ViewBag.vlc = valuectegory;
+            List<SelectListItem> valueWriter = (from x in wm.GetList()
+                                                 select new SelectListItem
+                                                 {
+                                                     Text = x.WriterName,
+                                                     Value = x.WriterID.ToString()
+                                                 }
+                                                ).ToList();
+            ViewBag.vlw = valueWriter;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddHeading(Heading p)
+        {
+            p.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                hm.AddHeading(p);
+                return RedirectToAction("Index");
+          
         }
     }
 }
