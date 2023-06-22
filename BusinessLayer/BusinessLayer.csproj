@@ -61,9 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICategoryServices.cs" />
+    <Compile Include="Abstract\IContetnServices.cs" />
     <Compile Include="Abstract\IHeadingServices.cs" />
     <Compile Include="Abstract\IWriterServices.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
+    <Compile Include="Concrete\ContentManager.cs" />
     <Compile Include="Concrete\HeadingManager.cs" />
     <Compile Include="Concrete\WriterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
