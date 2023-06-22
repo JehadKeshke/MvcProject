@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcProjeKampi", "MvcProjeKampi\MvcProjeKampi.csproj", "{D24775AA-8BA8-4321-910D-1269C6DEEB30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityAccessLayer", "EntityAccessLayer\EntityAccessLayer.csproj", "{3139821C-84B5-4C2A-90B2-ABDB6BF86E50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "EntityAccessLayer\DataAccessLayer.csproj", "{3139821C-84B5-4C2A-90B2-ABDB6BF86E50}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity_Layer", "Entity_Layer\Entity_Layer.csproj", "{8A674A28-0832-4B28-96F7-45FD83D017D1}"
 EndProject

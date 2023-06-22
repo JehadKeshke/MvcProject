@@ -1,7 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using Entity_Layer.Concrete;
-using EntityAccessLayer.EntityFramework;
+using DataAccessLayer.EntityFramework;
 using FluentValidation.Results;
 using System;
 using System.Collections.Generic;

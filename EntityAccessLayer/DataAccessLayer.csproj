@@ -74,6 +74,14 @@
     <Compile Include="Migrations\202305301001459_mig_Edit_Writer.designer.cs">
       <DependentUpon>202305301001459_mig_Edit_Writer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202306211530457_mig-imgsize.cs" />
+    <Compile Include="Migrations\202306211530457_mig-imgsize.designer.cs">
+      <DependentUpon>202306211530457_mig-imgsize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306221106168_mig-Addwriterstatus.cs" />
+    <Compile Include="Migrations\202306221106168_mig-Addwriterstatus.designer.cs">
+      <DependentUpon>202306221106168_mig-Addwriterstatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305301001459_mig_Edit_Writer.resx">
       <DependentUpon>202305301001459_mig_Edit_Writer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306211530457_mig-imgsize.resx">
+      <DependentUpon>202306211530457_mig-imgsize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306221106168_mig-Addwriterstatus.resx">
+      <DependentUpon>202306221106168_mig-Addwriterstatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

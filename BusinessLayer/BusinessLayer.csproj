@@ -71,9 +71,9 @@
     <Compile Include="ValidationRules\WriterValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntityAccessLayer\EntityAccessLayer.csproj">
+    <ProjectReference Include="..\EntityAccessLayer\DataAccessLayer.csproj">
       <Project>{3139821c-84b5-4c2a-90b2-abdb6bf86e50}</Project>
-      <Name>EntityAccessLayer</Name>
+      <Name>DataAccessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entity_Layer\Entity_Layer.csproj">
       <Project>{8a674a28-0832-4b28-96f7-45fd83d017d1}</Project>

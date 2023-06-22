@@ -1,6 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using Entity_Layer.Concrete;
-using EntityAccessLayer.EntityFramework;
+using DataAccessLayer.EntityFramework;
 using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
@@ -53,6 +53,11 @@ namespace MvcProjeKampi.Controllers
                 hm.AddHeading(p);
                 return RedirectToAction("Index");
           
+        }
+
+        public ActionResult ContentByHeading()
+        {
+            return View();
         }
     }
 }

@@ -16,10 +16,11 @@
                 <div class="col-sm-6">
                     <h1>Writers Page</h1>
                 </div>
-                <a href="AddWriter" class="btn btn-info" style="margin-left:auto;">Insert Writer</a>
+                <a href="/Writer/AddWriter" class="btn btn-info" style="margin-left:auto;">Insert Writer</a>
             </div>
         </div><!-- /.container-fluid -->
     </section>
+
     <!-- Main content -->
     <section class="content">
         <!-- Default box -->
@@ -28,7 +29,7 @@
                 <div class="row d-flex align-items-stretch">
                     @foreach (var item in Model)
                     {
-                        <div class="col-12 col-sm-6 col-md-4  align-items-stretch">
+                        <div class="col-12 col-sm-6 col-md-4 d-flex  align-items-stretch">
                             @*d flex vardi*@
                         <div class="card bg-light ">
                             <div class="card-header text-muted border-bottom-0">
@@ -43,8 +44,8 @@
                                             <li class="small"><span class="fa-li"><i class="fas fa-lg fa-mail-bulk"></i></span> Mail: @item.WriterMail</li>
                                         </ul>
                                     </div>
-                                    <div class="col-5 text-center">
-                                        <img src="~/AdminLTE-3.0.4/dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                    <div class="col-5 text-center ">
+                                        <img src="@item.WriterImage" alt="" class="img-circle img-fluid ">
                                     </div>
                                 </div>
                             </div>
@@ -62,9 +63,7 @@
                     </div>
 
                 }
-                    @*  <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch btn-success">
-                            <img src="https://www.shutterstock.com/image-vector/green-plus-sign-positive-symbol-260nw-652735807.jpg "style="height:250px;width:250px;" alt="Alternate Text" />
-                        </div>*@
+                   
                 </div>
             </div>
         </div>
