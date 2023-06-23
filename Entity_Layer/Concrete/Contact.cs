@@ -23,5 +23,6 @@ namespace Entity_Layer.Concrete
 
         [StringLength(1000)]
         public string Message { get; set; }
+
     }
 }

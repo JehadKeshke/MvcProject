@@ -35,11 +35,11 @@ namespace MvcProjeKampi.Controllers
                                                  ).ToList();
             ViewBag.vlc = valuectegory;
             List<SelectListItem> valueWriter = (from x in wm.GetList()
-                                                 select new SelectListItem
-                                                 {
-                                                     Text = x.WriterName,
-                                                     Value = x.WriterID.ToString()
-                                                 }
+                                                select new SelectListItem
+                                                {
+                                                    Text = x.WriterName,
+                                                    Value = x.WriterID.ToString()
+                                                }
                                                 ).ToList();
             ViewBag.vlw = valueWriter;
 
@@ -50,14 +50,39 @@ namespace MvcProjeKampi.Controllers
         public ActionResult AddHeading(Heading p)
         {
             p.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                hm.AddHeading(p);
-                return RedirectToAction("Index");
-          
+            hm.AddHeading(p);
+            return RedirectToAction("Index");
+
         }
 
-        public ActionResult ContentByHeading()
+        public ActionResult EditHeading(int id)
         {
-            return View();
+            List<SelectListItem> valuectegory = (from x in cm.GetList()
+                                                 select new SelectListItem
+                                                 {
+                                                     Text = x.CategoryName,
+                                                     Value = x.CategoryID.ToString()
+                                                 }
+                                                   ).ToList();
+            ViewBag.vlc = valuectegory;
+            List<SelectListItem> valueWriter = (from x in wm.GetList()
+                                                 select new SelectListItem
+                                                 {
+                                                     Text =x.WriterName,
+                                                     Value = x.WriterID.ToString()
+                                                 }
+                                                  ).ToList();
+            ViewBag.vlw = valueWriter;
+            var HeadingValue = hm.GetByID(id);
+            return View(HeadingValue);
         }
+        [HttpPost]
+        public ActionResult EditHeading(Heading p)
+        {
+            hm.UpdateHeading(p);
+            return RedirectToAction("Index");
+        }
+
+        
     }
 }
