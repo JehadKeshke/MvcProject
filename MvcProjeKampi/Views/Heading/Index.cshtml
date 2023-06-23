@@ -53,13 +53,16 @@
                             <th style="width: 20%">
                                 Heading Name
                             </th>
-                            <th style="width: 30%">
+                            <th style="width: 15%">
                                 Writer who created
                             </th>
-                            <th style="width: 8%" class="text-center">
+                            <th style="width: 3%">
+                                Status
+                            </th>
+                            <th style="width: 12%" class="text-center">
                                 Category
                             </th>
-                            <th style="width: 20%">
+                            <th style="width: 15%">
                             </th>
                         </tr>
                     </thead>
@@ -101,6 +104,17 @@
                                             <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage" style="width:60px;height:50px">
                                         </li>
                                     </ul>
+                                </td>
+                                <td class="project-state">
+                                    
+                                    @if (@item.HeadingStatus.ToString() == "True")
+                                    {
+                                        <h2 class="badge badge-success">@item.HeadingStatus</h2>
+                                    }
+                                    @if (@item.HeadingStatus.ToString() == "False")
+                                    {
+                                    <h2 class="badge badge-danger">@item.HeadingStatus</h2>
+                                    }
                                 </td>
                                 <td class="project-state">
                                     <span class="@color">@item.Category.CategoryName</span>

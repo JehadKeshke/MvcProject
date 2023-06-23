@@ -22,6 +22,9 @@
         @Html.Label("Date")
         @Html.TextBoxFor(model => model.HeadingDate, new { @class = "form-control" })
         <br />
+        @Html.Label("Status")
+        @Html.EditorFor(model => model.HeadingStatus, new { @class = "form-control" })
+        <br />
         @Html.Label("Category")
         @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
         <br />
