@@ -37,9 +37,7 @@
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                         <i class="fas fa-minus"></i>
                     </button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                        <i class="fas fa-times"></i>
-                    </button>
+
                 </div>
             </div>
             <div class="card-body p-0">
@@ -106,14 +104,14 @@
                                     </ul>
                                 </td>
                                 <td class="project-state">
-                                    
+
                                     @if (@item.HeadingStatus.ToString() == "True")
                                     {
-                                        <h2 class="badge badge-success">@item.HeadingStatus</h2>
+                                        <span class="badge badge-success">Active</span>
                                     }
                                     @if (@item.HeadingStatus.ToString() == "False")
                                     {
-                                    <h2 class="badge badge-danger">@item.HeadingStatus</h2>
+                                        <span class="badge badge-danger">Passive</span>
                                     }
                                 </td>
                                 <td class="project-state">
