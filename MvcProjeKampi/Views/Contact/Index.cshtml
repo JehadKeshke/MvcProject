@@ -1,4 +1,6 @@
-﻿
+﻿@using Entity_Layer.Concrete
+@model List<Contact>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Admin_Layout.cshtml";
@@ -15,14 +17,9 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Inbox</h1>
+                    <h1>Contact Page</h1>
                 </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Inbox</li>
-                    </ol>
-                </div>
+
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -30,7 +27,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-3">
-                <a href="compose.html" class="btn btn-primary btn-block mb-3">Compose</a>
+                <a href="compose.html" class="btn btn-primary btn-block mb-3">Inbox</a>
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Folders</h3>
@@ -60,7 +57,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="fas fa-filter"></i> Junk
+                                    <i class="fas fa-filter"></i> Spam
                                     <span class="badge bg-warning float-right">65</span>
                                 </a>
                             </li>
@@ -152,21 +149,24 @@
                         <div class="table-responsive mailbox-messages">
                             <table class="table table-hover table-striped">
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="icheck-primary">
-                                                <input type="checkbox" value="" id="check1">
-                                                <label for="check1"></label>
-                                            </div>
-                                        </td>
-                                        <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                        <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
-                                        <td class="mailbox-subject">
-                                            <b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
-                                        </td>
-                                        <td class="mailbox-attachment"></td>
-                                        <td class="mailbox-date">5 mins ago</td>
-                                    </tr>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <div class="icheck-primary">
+                                                    <input type="checkbox" value="" id="check1">
+                                                    <label for="check1"></label>
+                                                </div>
+                                            </td>
+                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="read-mail.html">@item.UserName</a></td>
+                                            <td class="mailbox-subject">
+                                                <b>@item.Subject</b> @item.Message.Substring(0,30)..
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">5 mins ago</td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                             <!-- /.table -->

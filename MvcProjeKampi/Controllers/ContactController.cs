@@ -14,7 +14,8 @@ namespace MvcProjeKampi.Controllers
         // GET: Concat
         public ActionResult Index()
         {
-            return View();
+            var ContactValue = cm.GetList();
+            return View(ContactValue);
         }
     }
 }
