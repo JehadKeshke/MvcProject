@@ -5,30 +5,24 @@
     Layout = "~/Views/Shared/Admin_Layout.cshtml";
 }
 
-<h2>About</h2>
+<h2>About Page</h2>
 <br />
-
-<button class="btn btn-primary" data-toggle="modal" data-target="#modal1">
-    Add New About
-</button>
-<div class="modal" id="modal1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Adding New About</h2>
-            </div>
-            <form action="#" method="post">
-                <div class="modal-body">
-                    <label>About text 1 </label>
-                    <input type="text" name="#" class="form-control" />
-                    <br />
-                    <label>About text 2 </label>
-                    <input type="text" name="#" class="form-control" />
-                    <br />
-                    <button class="btn btn-info">Save</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+<table class="table table-bordered">
+    <tr>
+        <td>Text 1</td>
+        <td>Text 2</td>
+        <td>Image 1</td>
+        <td>Image 2</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.AboutDetails1</th> 
+            <th>@item.AboutDetails2</th> 
+            <th>@item.AboutImage1 </th> 
+            <th>@item.AboutImage2</th> 
+        </tr>
+    }
+</table>
+@Html.Action("AboutPartial","About")
 
