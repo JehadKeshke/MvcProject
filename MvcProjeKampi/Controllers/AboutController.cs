@@ -31,9 +31,6 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("Index");
         }
 
-        public PartialViewResult AboutPartial()
-        {
-            return PartialView();
-        }
+       
     }
 }
