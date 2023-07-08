@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IGalleryService.cs" />
     <Compile Include="Abstract\IAboutService.cs" />
     <Compile Include="Abstract\ICategoryServices.cs" />
     <Compile Include="Abstract\IContactService.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Concrete\AboutManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\ContentManager.cs" />
+    <Compile Include="Concrete\GalleryManager.cs" />
     <Compile Include="Concrete\HeadingManager.cs" />
     <Compile Include="Concrete\ContactManager.cs" />
     <Compile Include="Concrete\WriterManager.cs" />

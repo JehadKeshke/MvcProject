@@ -55,6 +55,7 @@
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
+    <Compile Include="Abstract\IGalleryDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
+    <Compile Include="EntityFramework\EfGalleryDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202305171240130_mig1.cs" />
@@ -81,6 +83,10 @@
     <Compile Include="Migrations\202306231214043_mig_HEadContEdit.cs" />
     <Compile Include="Migrations\202306231214043_mig_HEadContEdit.designer.cs">
       <DependentUpon>202306231214043_mig_HEadContEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307081633098_gallery-mig.cs" />
+    <Compile Include="Migrations\202307081633098_gallery-mig.designer.cs">
+      <DependentUpon>202307081633098_gallery-mig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306231214043_mig_HEadContEdit.resx">
       <DependentUpon>202306231214043_mig_HEadContEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307081633098_gallery-mig.resx">
+      <DependentUpon>202307081633098_gallery-mig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
