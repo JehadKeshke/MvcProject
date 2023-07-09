@@ -88,6 +88,10 @@
     <Compile Include="Migrations\202307081633098_gallery-mig.designer.cs">
       <DependentUpon>202307081633098_gallery-mig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307091131051_Admin-mig.cs" />
+    <Compile Include="Migrations\202307091131051_Admin-mig.designer.cs">
+      <DependentUpon>202307091131051_Admin-mig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -116,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307081633098_gallery-mig.resx">
       <DependentUpon>202307081633098_gallery-mig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307091131051_Admin-mig.resx">
+      <DependentUpon>202307091131051_Admin-mig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -16,6 +16,7 @@ namespace MvcProjeKampi.Controllers
         WriterManager wm = new WriterManager(new EfWriterDal());
         WriterValidator wv = new WriterValidator();
 
+        [Authorize]
         public ActionResult Index()
         {
             var WriterValue = wm.GetList();

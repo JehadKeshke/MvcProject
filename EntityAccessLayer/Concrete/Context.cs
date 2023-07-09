@@ -17,6 +17,7 @@ namespace DataAccessLayer.Concrete
         public DbSet <Writer> Writers { get; set; }
         public DbSet <Heading> Headings { get; set; }
         public DbSet <Gallery> Galleries { get; set; }
+        public DbSet <Admin> Admins { get; set; }
 
     }
 }

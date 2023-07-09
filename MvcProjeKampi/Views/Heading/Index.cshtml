@@ -1,9 +1,6 @@
 ﻿@*@model IEnumerable<Entity_Layer.Concrete.Heading>
 
-    @{
-        ViewBag.Title = "Index";
-        Layout = "~/Views/Shared/Admin_Layout.cshtml";
-    }
+
 *@
 
 @using Entity_Layer.Concrete
@@ -71,15 +68,15 @@
                             {
                                 color = "badge badge-success";
                             }
-                            if (item.Category.CategoryName == "Learning")
+                            else if (item.Category.CategoryName == "Learning")
                             {
                                 color = "badge badge-info";
                             }
-                            if (item.Category.CategoryName == "Movies")
+                            else if (item.Category.CategoryName == "Movies")
                             {
                                 color = "badge badge-warning";
                             }
-                            if (item.Category.CategoryName == "Social media")
+                            else if (item.Category.CategoryName == "Social media")
                             {
                                 color = "badge badge-secondary";
                             }
@@ -128,11 +125,22 @@
                                         </i>
                                         Edit
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Delete
-                                    </a>
+                                    @if (item.HeadingStatus)
+                                    {
+                                        <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Delete
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-danger btn-sm " href="#" style="color:#ccc;pointer-events:none;">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Delete
+                                        </a>
+                                    }
                                 </td>
                             </tr>
                         }
