@@ -27,7 +27,7 @@ to get the desired effect
 |---------------------------------------------------------|
 -->
 <body class="hold-transition sidebar-mini">
-    
+
     <div class="wrapper">
         <!-- Navbar -->
         <!-- /.navbar -->
@@ -56,23 +56,26 @@ to get the desired effect
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-         with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview ">
+                        with font-awesome or any other icon font library -->
+                        @if (User.IsInRole("a"))
+                        {
+                            <li class="nav-item has-treeview ">
                             <a href="/AdminCategory/GetCategoryList" class="nav-link ">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Categories
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Heading/Index" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Categories</p></a>
+                            </li>            
+                        }
+                        @if (User.IsInRole("a"))
+                        {
+                            <li class="nav-item">
+                             <a href="/Heading/Index" class="nav-link">
+                              <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Headings
                                 </p>
-                            </a>
-                        </li>
+                             </a>
+                            </li>
+                         }
                         <li class="nav-item has-treeview">
                             <a href="/Writer/Index" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
@@ -158,16 +161,16 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Skills/Index" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
-                                    Skills 
-                                </p> 
+                                    Skills
+                                </p>
                             </a>
                         </li>
 
                         <li class="nav-item has-treeview">
-                            <a href="/Skills/Index" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-apple-alt"></i>
                                 <p>
                                     Log out

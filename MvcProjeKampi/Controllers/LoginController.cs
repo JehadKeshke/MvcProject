@@ -35,7 +35,7 @@ namespace MvcProjeKampi.Controllers
             }
             else
             {
-                Response.Write("<script>alert(\"Username or Password is not correct\")</script>");
+                ModelState.AddModelError("password", "The username or password is incorrect");
             }
             return View();
         }

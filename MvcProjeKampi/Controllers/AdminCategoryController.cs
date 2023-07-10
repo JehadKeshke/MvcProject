@@ -19,7 +19,7 @@ namespace MvcProjeKampi.Controllers
         {
             return View();
         }
-        [Authorize]
+        [Authorize(Roles ="a")]
         public ActionResult GetCategoryList()
         {
             var CategeoryValue = cm.GetList();

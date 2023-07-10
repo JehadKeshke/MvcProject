@@ -11,12 +11,13 @@ namespace MvcProjeKampi
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
+                routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "AdminCategory", action = "GetCategoryList", id = UrlParameter.Optional }
+                defaults: new { controller = "Writer", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
