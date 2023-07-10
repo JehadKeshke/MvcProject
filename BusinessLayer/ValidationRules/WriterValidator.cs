@@ -17,6 +17,7 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.About).NotEmpty().WithMessage("Please enter the discraption about writer");
             RuleFor(x => x.WriterName).MinimumLength(3).WithMessage("Please enter at least three characters");
             RuleFor(x => x.WriterName).MaximumLength(20).WithMessage("Please enter less than twenty characters");
+            RuleFor(x => x.WriterName).NotEqual(string.Empty).WithMessage("Username or Password is not correct");
         }
 
     }

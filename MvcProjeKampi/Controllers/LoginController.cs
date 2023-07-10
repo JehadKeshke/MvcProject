@@ -1,5 +1,7 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete;
 using Entity_Layer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,7 @@ namespace MvcProjeKampi.Controllers
 {
     public class LoginController : Controller
     {
+       
         // GET: Admin
         [HttpGet]
         public ActionResult Index()
@@ -20,6 +23,8 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult Index(Admin p)
         {
+            LoginValidator logv = new LoginValidator();
+            ValidationResult results = logv.Validate(p);
 
             Context c = new Context();
             var AdminInfo = c.Admins.FirstOrDefault(x => x.AdminUserName == p.AdminUserName && x.AdminPassword == p.AdminPassword);
@@ -30,7 +35,7 @@ namespace MvcProjeKampi.Controllers
             }
             else
             {
-                return RedirectToAction("Index");
+                Response.Write("<script>alert(\"Username or Password is not correct\")</script>");
             }
             return View();
         }

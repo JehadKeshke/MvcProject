@@ -58,6 +58,7 @@
     <Compile Include="Abstract\IGalleryDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\ISkillDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Repository\GenericRepository.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfGalleryDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfSkillDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202305171240130_mig1.cs" />
     <Compile Include="Migrations\202305171240130_mig1.designer.cs">
@@ -91,6 +93,10 @@
     <Compile Include="Migrations\202307091131051_Admin-mig.cs" />
     <Compile Include="Migrations\202307091131051_Admin-mig.designer.cs">
       <DependentUpon>202307091131051_Admin-mig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307101559208_Skill-mig.cs" />
+    <Compile Include="Migrations\202307101559208_Skill-mig.designer.cs">
+      <DependentUpon>202307101559208_Skill-mig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307091131051_Admin-mig.resx">
       <DependentUpon>202307091131051_Admin-mig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307101559208_Skill-mig.resx">
+      <DependentUpon>202307101559208_Skill-mig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
