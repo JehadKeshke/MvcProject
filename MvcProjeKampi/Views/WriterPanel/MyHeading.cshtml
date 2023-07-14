@@ -1,17 +1,16 @@
-﻿@*@model IEnumerable<Entity_Layer.Concrete.Heading>
-
-
-*@
-
-@using Entity_Layer.Concrete
+﻿@using Entity_Layer.Concrete
 @model List<Heading>
+
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+    ViewBag.Title = "MyHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
+
+
+
 @{ string color = "";}
 <!DOCTYPE html>
-<html> 
+<html>
 
 <body class="hold-transition sidebar-mini">
     <!-- Content Header (Page header) -->
@@ -29,7 +28,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Headings Processes</h3>
+                <h3 class="card-title">My Headnings Processes</h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -120,14 +119,14 @@
                                         </i>
                                         Articles
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingID">
+                                    <a class="btn btn-info btn-sm" href="/WriterPanel/EditHeading/@item.HeadingID">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit
                                     </a>
                                     @if (item.HeadingStatus)
                                     {
-                                        <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
+                                        <a class="btn btn-danger btn-sm" href="/WriterPanel/DeleteHeading/@item.HeadingID">
                                             <i class="fas fa-trash">
                                             </i>
                                             Delete
@@ -151,78 +150,7 @@
         </div>
         <!-- /.card -->
     </section>
-    <a href="/Heading/AddHeading" class="btn btn-info" style="margin-left:auto;margin-bottom:20px;">New Heading</a>
+    <a href="/WriterPanel/AddHeading" class="btn btn-info" style="margin-left:auto;">New Heading</a>
 </body>
 </html>
 
-
-
-@*<h2>Index</h2>
-    <br />
-    <table class="table table-bordered">
-        <tr>
-            <th>ID</th>
-            <th>Başlık</th>
-            <th>Kategori</th>
-        </tr>
-        @foreach(var item in Model)
-        {
-            <tr>
-                <td>@item.HeadingID</td>
-                <td>@item.HeadingName</td>
-                <td>@item.Category.CategoryName</td>
-            </tr>
-        }
-    </table>
-    <br />
-    <a href="/Heading/AddHeading" class="btn btn-info">Yeni başlık Girişi</a>*@
-
-
-@*<h2>Index</h2>
-
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Category.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Writer.WriterName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HeadingName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HeadingDate)
-            </th>
-            <th></th>
-        </tr>
-
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.CategoryName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Writer.WriterName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HeadingName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HeadingDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.HeadingID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.HeadingID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.HeadingID })
-            </td>
-        </tr>
-    }
-
-    </table>
-    <br />
-
-    <a href="/Heading/AddHeading"class="btn btn-info">Heading Add</a>*@

@@ -14,7 +14,7 @@ namespace MvcProjeKampi.Controllers
         GalleryManager gm = new GalleryManager(new EfGalleryDal());
 
         // GET: Gallery
-        [Authorize]
+     
         public ActionResult Index()
         {
             var GalleryValues = gm.GetList();
