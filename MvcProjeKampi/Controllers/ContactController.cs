@@ -12,7 +12,7 @@ namespace MvcProjeKampi.Controllers
     {
         ContactManager cm = new ContactManager(new EfContactDal()); 
         // GET: Concat
-        [Authorize]
+   
         public ActionResult Index()
         {
             var ContactValue = cm.GetList();
