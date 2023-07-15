@@ -39,6 +39,11 @@ namespace BusinessLayer.Concrete
             return contentDal.List(x =>x.HeadingID == id);
         }
 
+        public List<Content> GetListByWriter()
+        {
+            return contentDal.List(x => x.ContentID == 4);
+        }
+
         public void RemoveContent(Content content)
         {
             throw new NotImplementedException();

@@ -150,6 +150,7 @@
     <Compile Include="Controllers\CartegoryController.cs" />
     <Compile Include="Controllers\SkillsController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
+    <Compile Include="Controllers\WriterPanelContentController.cs" />
     <Compile Include="Controllers\WriterPanelController.cs" />
     <Compile Include="Controllers\WriterPanelMesageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2589,6 +2590,7 @@
     <Content Include="Views\WriterPanelMesage\GetListInboxByID.cshtml" />
     <Content Include="Views\WriterPanelMesage\GetListSendboxByID.cshtml" />
     <Content Include="Views\WriterPanelMesage\NewMessage.cshtml" />
+    <Content Include="Views\WriterPanelContent\GetContentByWriter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
