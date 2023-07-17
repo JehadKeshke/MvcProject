@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using Entity_Layer.Concrete;
 using EntityAccessLayer.EntityFramework;
 using System;
@@ -12,19 +13,25 @@ namespace MvcProjeKampi.Controllers
     public class WriterPanelMesageController : Controller
     {
         MessageManager mm = new MessageManager(new EfMessageDal());
+        Context c = new Context();
 
         // GET: WriterPanelMesage
+        [Authorize]
         public ActionResult Inbox()
         {
-            
-            var ValueMessage = mm.GetListInbox();
+        
+            string p = (string)Session["WriterMail"];
+            var inboxinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();    
+            var ValueMessage = mm.GetListInbox(p);
             return View(ValueMessage);
         }
-
+        [Authorize]
         public ActionResult SendBox()
         {
-
-            var ValueMessage = mm.GetListSendbox();
+            string p = (string)Session["WriterMail"];
+            var inboxinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+            
+            var ValueMessage = mm.GetListSendbox(p);
             return View(ValueMessage);
         }
 
@@ -48,7 +55,9 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult NewMessage(Message p)
         {
-            p.SenderMail = "omer@gmail.com";
+            string z = (string)Session["WriterMail"];
+            var inboxinfo = c.Writers.Where(x => x.WriterMail == z).Select(y => y.WriterID).FirstOrDefault();
+            p.SenderMail = z;
             p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             mm.AddMessage(p);
             return RedirectToAction("SendBox");

@@ -1,4 +1,5 @@
-﻿<div class="col-md-3">
+﻿@{ int count = ViewBag.messagecount;}
+<div class="col-md-3">
     <a href="/WriterPanelMesage/NewMessage" class="btn btn-primary btn-block mb-3">New Message</a>
     <div class="card">
         <div class="card-header">
@@ -14,7 +15,7 @@
                 <li class="nav-item active">
                     <a href="/WriterPanelMesage/Inbox" class="nav-link">
                         <i class="fas fa-inbox"></i> Inbox
-                        <span class="badge bg-primary float-right">12</span>
+                        <span class="badge bg-primary float-right">@count</span>
                     </a>
                 </li>
                 <li class="nav-item">

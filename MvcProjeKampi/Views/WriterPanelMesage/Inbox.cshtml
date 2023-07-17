@@ -7,10 +7,6 @@
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
-
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -78,6 +74,7 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
+                                      
                                         <tr>
                                             <td>
                                                 <div class="icheck-primary">
@@ -91,7 +88,7 @@
                                                 <b>@item.Subject</b> @item.Content.Substring(0, 30)..
                                             </td>
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">5 mins ago</td>
+                                            <td class="mailbox-date">@item.MessageDate</td>
                                         </tr>
                                     }
                                 </tbody>

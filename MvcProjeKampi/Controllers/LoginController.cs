@@ -42,18 +42,24 @@ namespace MvcProjeKampi.Controllers
             }
             return View();
         }
+        [HttpGet]
+        public ActionResult WriterLogin()
+        {
+            return View();
+        }
 
+        [HttpPost]
         public ActionResult WriterLogin(Writer p)
         {
-            LoginValidator logv = new LoginValidator();
-            /*ValidationResult results = logv.Validate(p);*/
+            WriterLogin logwr = new WriterLogin();
+            ValidationResult results = logwr.Validate(p);
 
             Context c = new Context();
             var WriterInfo = c.Writers.FirstOrDefault(x =>x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
             if (WriterInfo != null)
             {
                 FormsAuthentication.SetAuthCookie(WriterInfo.WriterMail, false);
-                Session["WriterName"] = WriterInfo.WriterMail;
+                Session["WriterMail"] = WriterInfo.WriterMail;
                 return RedirectToAction("GetContentByWriter", "WriterPanelContent");
             }
             else

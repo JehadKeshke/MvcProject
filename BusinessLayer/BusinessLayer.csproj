@@ -80,6 +80,7 @@
     <Compile Include="Concrete\WriterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\CategoryValidatior.cs" />
+    <Compile Include="ValidationRules\WriterLogin.cs" />
     <Compile Include="ValidationRules\ContactValidator.cs" />
     <Compile Include="ValidationRules\LoginValidator.cs" />
     <Compile Include="ValidationRules\WriterValidator.cs" />
