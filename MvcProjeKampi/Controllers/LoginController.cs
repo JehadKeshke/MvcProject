@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.ValidationRules;
 using DataAccessLayer.Concrete;
 using Entity_Layer.Concrete;
+using FluentValidation;
 using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,28 @@ namespace MvcProjeKampi.Controllers
             if (AdminInfo!=null)
             {
                 FormsAuthentication.SetAuthCookie(AdminInfo.AdminUserName, false);
-                return RedirectToAction("GetCategoryList", "AdminCategory");
+                Session["AdminUserName"] = AdminInfo.AdminUserName;
+                return RedirectToAction("Index", "Writer");
+            }
+            else
+            {
+                ModelState.AddModelError("password", "The username or password is incorrect");
+            }
+            return View();
+        }
+
+        public ActionResult WriterLogin(Writer p)
+        {
+            LoginValidator logv = new LoginValidator();
+            /*ValidationResult results = logv.Validate(p);*/
+
+            Context c = new Context();
+            var WriterInfo = c.Writers.FirstOrDefault(x =>x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
+            if (WriterInfo != null)
+            {
+                FormsAuthentication.SetAuthCookie(WriterInfo.WriterMail, false);
+                Session["WriterName"] = WriterInfo.WriterMail;
+                return RedirectToAction("GetContentByWriter", "WriterPanelContent");
             }
             else
             {
