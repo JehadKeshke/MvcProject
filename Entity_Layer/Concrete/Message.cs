@@ -23,5 +23,7 @@ namespace Entity_Layer.Concrete
 
         public string  Content { get; set; }
         public DateTime MessageDate { get; set; }
+
+        public bool IsReading { get; set; }
     }
 }

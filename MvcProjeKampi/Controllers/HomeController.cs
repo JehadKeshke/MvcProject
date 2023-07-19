@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +10,13 @@ namespace MvcProjeKampi.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        CategoryManager cm = new CategoryManager(new EfCategoryDal());
+
+        public ActionResult ListContent()
         {
-            return View();
+            var value = cm.GetList();
+            return View(value);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

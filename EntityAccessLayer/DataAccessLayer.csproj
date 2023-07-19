@@ -104,6 +104,10 @@
     <Compile Include="Migrations\202307141510498_Message_mig.designer.cs">
       <DependentUpon>202307141510498_Message_mig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307181810525_editmessage-mig.cs" />
+    <Compile Include="Migrations\202307181810525_editmessage-mig.designer.cs">
+      <DependentUpon>202307181810525_editmessage-mig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -141,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307141510498_Message_mig.resx">
       <DependentUpon>202307141510498_Message_mig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307181810525_editmessage-mig.resx">
+      <DependentUpon>202307181810525_editmessage-mig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

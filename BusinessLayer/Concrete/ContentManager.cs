@@ -31,7 +31,7 @@ namespace BusinessLayer.Concrete
 
         public List<Content> GetList()
         {
-            throw new NotImplementedException();
+            return contentDal.List();
         }
 
         public List<Content> GetListByHeading(int id)

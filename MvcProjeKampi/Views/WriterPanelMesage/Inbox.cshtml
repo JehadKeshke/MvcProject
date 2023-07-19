@@ -74,22 +74,35 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                      
-                                        <tr>
-                                            <td>
-                                                <div class="icheck-primary">
-                                                    <input type="checkbox" value="" id="check1">
-                                                    <label for="check1"></label>
-                                                </div>
-                                            </td>
+
+                                    <tr>
+                                        <td>
+                                            <div class="icheck-primary">
+                                                <input type="checkbox" value="" id="check1">
+                                                <label for="check1"></label>
+                                            </div>
+                                        </td>
+                                        @if (!item.IsReading)
+                                        {
                                             <td class="mailbox-star"><a href="/WriterPanelMesage/GetListInboxByID/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
                                             <td class="mailbox-name"><a href="/WriterPanelMesage/GetListInboxByID/@item.MessageID">@item.SenderMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> @item.Content.Substring(0, 30)..
+                                                <b>@item.Subject @item.Content.Substring(0, 25)..</b>
                                             </td>
-                                            <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">@item.MessageDate</td>
-                                        </tr>
+                                        }
+                                        else
+                                        {
+                                        <td class="mailbox-star"><a href="/WriterPanelMesage/GetListInboxByID/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="/WriterPanelMesage/GetListInboxByID/@item.MessageID">@item.SenderMail</a></td>
+                                        <td class="mailbox-subject">
+                                            @item.Subject @item.Content.Substring(0, 25)..
+                                        </td>
+                                        }
+
+
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">@item.MessageDate</td>
+                                    </tr>
                                     }
                                 </tbody>
                             </table>
