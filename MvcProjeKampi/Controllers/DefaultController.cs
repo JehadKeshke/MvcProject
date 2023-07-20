@@ -19,7 +19,7 @@ namespace MvcProjeKampi.Controllers
             return View(value);
         }
 
-        public PartialViewResult GetAllContent(int id = 0)
+        public PartialViewResult GetAllContent(int id = 1)
         {
             var getlistcontent = cm.GetListByHeading(id);
             return PartialView(getlistcontent);
