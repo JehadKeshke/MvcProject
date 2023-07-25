@@ -24,6 +24,12 @@ namespace MvcProjeKampi.Controllers
             return View(headingvlue);
         }
 
+        public ActionResult HeadingReporting()
+        {
+            var value = hm.GetList();
+            return View(value);
+        }
+
         [HttpGet]
         public ActionResult AddHeading()
         {

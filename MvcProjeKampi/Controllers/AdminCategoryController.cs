@@ -70,5 +70,10 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("GetCategoryList");
         }
 
+        public ActionResult CategoryReporting()
+        {
+            var value = cm.GetList();
+            return View(value);
+        }
     }
 }
