@@ -17,6 +17,11 @@ namespace MvcProjeKampi.Controllers
             var value = cm.GetList();
             return View(value);
         }
+        [AllowAnonymous]
+        public ActionResult HomePage()
+        {
+            return View();
+        }
 
     }
 }
